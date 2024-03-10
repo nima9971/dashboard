@@ -1,0 +1,281 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    --fa-style-family-classic: "Font Awesome 6 Free";
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+}
+.page {
+    display: flex;
+    background-color: #f1f5f9;
+}
+
+.page .sidebar {
+    width: 250px;
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 0 10px #ddd;
+}
+
+.page .sidebar h3 {
+    text-align: center;
+    position: relative;
+    margin: 0 0 50px ;
+}
+.page .sidebar h3::before,
+.page .sidebar h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+}
+.page .sidebar h3::before {
+    height: 2px;
+    width: 80px;
+    bottom: -20px;
+}
+.page .sidebar h3::after {
+    bottom: -29px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.page .sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.page .sidebar ul li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    color: black;
+    font-size: 14px;
+    position: relative;
+    margin-bottom: 5px;
+}
+.page .sidebar ul li a i {
+    display: block;
+    position: relative;
+}
+.page .sidebar ul li a span { 
+    display: block;
+    position: relative;
+}
+@media (max-width: 767px) {
+    .page .sidebar ul li a span {
+        display: none;
+    }
+}
+.page .sidebar ul li .active {
+    background-color: #f6f6f6;
+    border-radius: 6px;
+}
+.page .sidebar ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: #f6f6f6;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+.page .sidebar ul li a:hover::before {
+    width: 100%;
+}
+@media (max-width: 767px) {
+    .page .sidebar {
+        width: 58px;
+        padding: 10px;
+    }
+    .page .sidebar ul li {
+        width: fit-content;
+    }
+    .page .sidebar ul li a {
+        width: 37px;
+    }
+    .page .sidebar h3 {
+        font-size: 15px;
+    }
+    .page .sidebar h3::before ,
+    .page .sidebar h3::after {
+        display: none;
+    }
+}
+.sidebar ul li a i {
+    margin-right: 15px;
+} 
+/* search */
+
+.page .content {
+    width: 100%;
+    overflow: hidden;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+}
+.head .search-bar {
+    position: relative;
+}
+.head .search-bar .search {
+    border-radius: 10px;
+    padding: 10px 10px 10px 30px;
+    width: 160px;
+    border: 1px solid #ccc;
+    margin-left: 5px;
+    transition: width 0.3s;
+}
+.head .search-bar .search:focus {
+    outline: none;
+    width: 200px;
+}
+.head .search-bar .search:focus::placeholder {
+    color: transparent
+}
+.head .search-bar::before {
+    font-family: var(--fa-style-family-classic);
+    content: "\f002";
+    font-weight: 900;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: grey;
+}
+
+.head .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head .icons img {
+    width: 30px;
+    margin-left: 15px
+}
+.head .icons span {
+    position: relative;
+}
+.head .icons span:before {
+    content: '';
+    position: absolute; 
+    right: -5px;
+    top: -3px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+/* search */
+
+ /* start of title */
+
+ .title h3 {
+    font-size: 32px;
+    margin: 20px 20px 40px;
+    font-weight: 600;
+    position: relative;
+}
+.title h3::before,
+.title h3::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+}
+.title h3::before {
+    bottom: -5px;
+    left: 0px;
+    width: 40px;
+    background-color: black;
+}
+.title h3::after {
+    bottom: -5px;
+    left: 40px;
+    width: 80px;
+    background-color: white;
+}
+ /* end of title */
+
+ /* start of wrapper */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* start of course */
+
+.course {
+    background-color: white;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+.course .cover {
+    max-width: 100%;
+}
+.course .instructor {
+    width: 64px;
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    border: 2px solid white;
+}
+.course .course-info {
+    padding: 20px;
+}
+.course .course-info h4 {
+    margin: 0;
+    font-size: 16px;
+}
+.course .course-info p {
+    margin: 15px 0 14px 0;
+    color: #888;
+    font-size: 15px;
+}
+.course .course-stats {
+    position: relative;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+.course .course-stats .title {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0075ff;
+    font-size: 13px;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+.course .course-stats .stat {
+    color: #888;
+    font-size: 13px;
+}
+/* end of course */
+
+ /* end of wrapper */
